@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef} from 'react';
+import Layout, { Sidebar, Content } from './layout';
+import HelperButtons from "./components/HelperButtons";
 
 function App() {
+    const pdfRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout rootRef={pdfRef}>
+        {/*<HelperButtons pdfRef={pdfRef} />*/}
+        <Sidebar />
+        <Content />
+    </Layout>
   );
 }
 
